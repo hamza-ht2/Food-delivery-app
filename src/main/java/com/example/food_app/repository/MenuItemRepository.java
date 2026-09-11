@@ -14,4 +14,5 @@ public interface MenuItemRepository extends JpaRepository<MenuItem, UUID> {
     Page<MenuItem> findByMenuCategoryId(UUID menuCategoryId, Pageable pageable);
     Page<MenuItem> findByMenuCategoryIdAndIsAvailableTrue(UUID menuCategoryId, Pageable pageable);
     Page<MenuItem> findByPriceBetween(BigDecimal min , BigDecimal max , Pageable pageable);
+    Page<MenuItem> getMenuItemsByNameContainingIgnoreCase(String name, Pageable pageable);
 }
